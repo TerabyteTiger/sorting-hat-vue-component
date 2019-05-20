@@ -1,9 +1,7 @@
 <template>
-  <div id="theSortingHat" class="unsorted">
-    <div class="card">
+  <div id="theSortingHat" class="card unsorted">
       <h1>{{ house ? house: "Welcome to Hogwarts" }}</h1>
       <button @click="getHouse()">Sort!</button>
-    </div>
   </div>
 </template>
 
@@ -24,7 +22,7 @@ export default {
           this.house = response.data;
           return response.data;
         }).then((response) =>{
-          document.getElementById("theSortingHat").className = response.toLowerCase()
+          document.getElementById("theSortingHat").className = "card " + response.toLowerCase()
         })
         .catch(function(error){
           // eslint-disable-next-line
